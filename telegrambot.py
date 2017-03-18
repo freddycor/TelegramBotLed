@@ -8,10 +8,10 @@ import telepot
 import RPi.GPIO as GPIO
 
 #LED
-def on(pin):
+def Accendi(pin):
         GPIO.output(pin,GPIO.HIGH)
         return
-def off(pin):
+def Spegni(pin):
         GPIO.output(pin,GPIO.LOW)
         return
 # to use Raspberry Pi board pin numbers
@@ -25,9 +25,9 @@ def handle(msg):
 
     print 'Got command: %s' % command
 
-    if command == 'on':
+    if command == 'Accendi':
        bot.sendMessage(chat_id, on(11))
-    elif command =='off':
+    elif command =='Spegni':
        bot.sendMessage(chat_id, off(11))
 
 bot = telepot.Bot('Bot Token')
